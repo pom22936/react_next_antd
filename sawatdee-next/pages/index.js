@@ -1,82 +1,85 @@
 import Head from 'next/head'
-import { Menu } from 'antd'
+import { Layout } from 'antd';
 import { Carousel, Card, Row, Col, Rate } from 'antd'
+import MyHerder from '../components/Header'
+import MyFooter from '../components/Footer'
+
+const { Header, Footer, Sider, Content } = Layout;
 
 export default () => (
   <div>
-    <Head>
-      <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css' />
-    </Head>
-    <div className="header">
-    <Menu mode="horizontal" theme="dark">
-      <Menu.Item key="product">
-        <h3>Product</h3>
-      </Menu.Item>
-      <Menu.Item key="About">
-        <h3>About</h3>
-      </Menu.Item>
-    </Menu>
-    </div>
-    <Carousel autoplay>
-      <div><h3>1</h3></div>
-      <div><h3>2</h3></div>
-      <div><h3>3</h3></div>
-      <div><h3>4</h3></div>
-    </Carousel>
-    <div className="header">Header</div>
-    <div className="content">Content</div>
+    <Layout>
+      <Head>
+        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css' />
+        <MyHerder />
+      </Head>
+      <Content>
+        <Carousel autoplay>
+          <div><h3>1</h3></div>
+          <div><h3>2</h3></div>
+          <div><h3>3</h3></div>
+          <div><h3>4</h3></div>
+        </Carousel>
 
-    <Row gutter={16}>
-      <Col span={6}>
-        <Card>
-          <div className="custom-image">
-            <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-          </div>
-          <div className="custom-card">
-            <h3>Europe Street beat</h3>
-            <p>www.instagram.com</p>
-            <p><Rate /></p>
-          </div>
-        </Card>
-      </Col>
-      <Col span={6}>
-      <Card>
-          <div className="custom-image">
-            <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-          </div>
-          <div className="custom-card">
-            <h3>Europe Street beat</h3>
-            <p>www.instagram.com</p>
-            <p><Rate /></p>
-          </div>
-        </Card>
-      </Col>
-      <Col span={6}>
-      <Card>
-          <div className="custom-image">
-            <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-          </div>
-          <div className="custom-card">
-            <h3>Europe Street beat</h3>
-            <p>www.instagram.com</p>
-            <p><Rate /></p>
-          </div>
-        </Card>
-      </Col>
-      <Col span={6}>
-      <Card>
-          <div className="custom-image">
-            <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-          </div>
-          <div className="custom-card">
-            <h3>Europe Street beat</h3>
-            <p>www.instagram.com</p>
-            <p><Rate /></p>
-          </div>
-        </Card>
-      </Col>
-    </Row>
+        <Row gutter={16}>
+          <Col span={6}>
+            <Card>
+              <div className="custom-image">
+                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              </div>
+              <div className="custom-card">
+                <h3>Europe Street beat</h3>
+                <p>www.instagram.com</p>
+                <p><Rate /></p>
+              </div>
+            </Card>
+          </Col>
+          <Col span={6}>
+          <Card>
+              <div className="custom-image">
+                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              </div>
+              <div className="custom-card">
+                <h3>Europe Street beat</h3>
+                <p>www.instagram.com</p>
+                <p><Rate /></p>
+              </div>
+            </Card>
+          </Col>
+          <Col span={6}>
+          <Card>
+              <div className="custom-image">
+                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              </div>
+              <div className="custom-card">
+                <h3>Europe Street beat</h3>
+                <p>www.instagram.com</p>
+                <p><Rate /></p>
+              </div>
+            </Card>
+          </Col>
+          <Col span={6}>
+          <Card>
+              <div className="custom-image">
+                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+              </div>
+              <div className="custom-card">
+                <h3>Europe Street beat</h3>
+                <p>www.instagram.com</p>
+                <p><Rate /></p>
+              </div>
+            </Card>
+          </Col>
+        </Row>
 
+      </Content>
+
+      <Footer>
+          <MyFooter />
+      </Footer>
+    </Layout>
+    
+   
 
     <style jsx global>{`
   .ant-carousel .slick-slide {
