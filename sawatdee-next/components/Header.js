@@ -1,24 +1,25 @@
-
 import { Menu } from 'antd'
-import Link from 'next/link'
 import Head from 'next/head'
+import { Icon } from 'antd';
 
 const MyHerder = () => (
     <div>
     <Head>
-        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css' />
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/antd/3.20.3/antd.css' />
     </Head>
-        <div className="header">
-        <Menu mode="horizontal" theme="dark">
-            <Menu.Item key="/">
-                <Link href="/">
-                    <a>Home</a>
-                </Link>
+        <div className="header" style={{textAlign: 'right'}}>
+        <Menu mode="horizontal" theme="dark" >
+            <Menu.Item key="1">
+                <a href="https://www.facebook.com/profile.php?id=100002504877412"><Icon type="facebook" style={{ fontSize: 24, color: '#08c' }}/></a>
             </Menu.Item>
-            <Menu.Item key="About">
-                <Link href="/about">
-                    <a>About</a>
-                </Link>
+            <Menu.Item key="2">
+                <a href="https://www.facebook.com/profile.php?id=100002504877412"><Icon type="google" style={{ fontSize: 24, color: '#08c' }} /></a>
+            </Menu.Item>
+            <Menu.Item key="3">
+                <a href="https://www.facebook.com/profile.php?id=100002504877412"><Icon type="twitter" style={{ fontSize: 24, color: '#08c' }} /></a>
+            </Menu.Item>
+            <Menu.Item key="4">
+                <a href="https://www.facebook.com/profile.php?id=100002504877412"><Icon type="instagram" style={{ fontSize: 24, color: '#08c' }} /></a>
             </Menu.Item>
         </Menu>
         </div>

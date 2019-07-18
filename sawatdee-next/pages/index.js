@@ -1,108 +1,53 @@
 import Head from 'next/head'
-import { Layout } from 'antd';
 import { Carousel, Card, Row, Col, Rate } from 'antd'
+import { Layout,Menu, Breadcrumb, Icon } from 'antd';
 import MyHerder from '../components/Header'
 import MyFooter from '../components/Footer'
+import MySidebar from '../components/Sidebar'
 
 const { Header, Footer, Sider, Content } = Layout;
+const { SubMenu } = Menu;
 
-export default () => (
-  <div>
-    <Layout>
-      <Head>
-        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css' />
-        <MyHerder />
-      </Head>
-      <Content>
-        <Carousel autoplay>
-          <div><h3>1</h3></div>
-          <div><h3>2</h3></div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
-        </Carousel>
+export default class Index extends React.Component{
+  
 
-        <Row gutter={16}>
-          <Col span={6}>
-            <Card>
-              <div className="custom-image">
-                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-              </div>
-              <div className="custom-card">
-                <h3>Europe Street beat</h3>
-                <p>www.instagram.com</p>
-                <p><Rate /></p>
-              </div>
-            </Card>
-          </Col>
-          <Col span={6}>
-          <Card>
-              <div className="custom-image">
-                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-              </div>
-              <div className="custom-card">
-                <h3>Europe Street beat</h3>
-                <p>www.instagram.com</p>
-                <p><Rate /></p>
-              </div>
-            </Card>
-          </Col>
-          <Col span={6}>
-          <Card>
-              <div className="custom-image">
-                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-              </div>
-              <div className="custom-card">
-                <h3>Europe Street beat</h3>
-                <p>www.instagram.com</p>
-                <p><Rate /></p>
-              </div>
-            </Card>
-          </Col>
-          <Col span={6}>
-          <Card>
-              <div className="custom-image">
-                <img alt="example" width="100%" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-              </div>
-              <div className="custom-card">
-                <h3>Europe Street beat</h3>
-                <p>www.instagram.com</p>
-                <p><Rate /></p>
-              </div>
-            </Card>
-          </Col>
-        </Row>
-
-      </Content>
-
-      <Footer>
-          <MyFooter />
-      </Footer>
-    </Layout>
-    
-   
-
-    <style jsx global>{`
-  .ant-carousel .slick-slide {
-    text-align: center;
-    height: 160px;
-    line-height: 160px;
-    background: #367279;
-    overflow: hidden;
-  }
+  render() {
+    return (
+      <div>
+     <Layout >
+        <Head>
+          <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/antd/3.20.3/antd.css' />
+        </Head>
+        <MySidebar/>
+        <Layout>
+          <Header style={{ background: '#fff', padding: 0}} ><MyHerder/></Header>
+          <Content style={{ margin: '0 16px' }}>
+            <Breadcrumb style={{ margin: '16px 0' }}>
+              <Breadcrumb.Item>User</Breadcrumb.Item>
+              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            </Breadcrumb>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Index Page.</div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            <MyFooter/>
+          </Footer>
+        </Layout>
+      </Layout>
       
-  .ant-carousel .slick-slide h3 {
-    color: #fff;
+     
+  
+      <style jsx global>{`
+        .logo {
+          height: 32px;
+          background: rgba(255, 255, 255, 0.2);
+          margin: 16px;
+        }
+        aside{
+          height: -webkit-fill-available;
+        }
+      `}</style>
+  
+    </div>
+    )
   }
-  .custom-image img {
-    isplay: block;
-  }
-  .custom-card {
-    padding: 10px 16px;
-  }
-  .custom-card p {
-    color: #999;
-  }
-`}</style>
-
-  </div>
-)
+}
