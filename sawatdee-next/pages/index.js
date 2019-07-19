@@ -1,53 +1,50 @@
-import Head from 'next/head'
-import { Carousel, Card, Row, Col, Rate } from 'antd'
-import { Layout,Menu, Breadcrumb, Icon } from 'antd';
-import MyHerder from '../components/Header'
-import MyFooter from '../components/Footer'
-import MySidebar from '../components/Sidebar'
+import Layouts from '../components/Layouts';
+import React,{Component} from "react";
+import axios from 'axios';
 
-const { Header, Footer, Sider, Content } = Layout;
-const { SubMenu } = Menu;
+const API_URL = 'https://jsonplaceholder.typicode.com/posts';
 
-export default class Index extends React.Component{
-  
-
-  render() {
-    return (
-      <div>
-     <Layout >
-        <Head>
-          <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/antd/3.20.3/antd.css' />
-        </Head>
-        <MySidebar/>
-        <Layout>
-          <Header style={{ background: '#fff', padding: 0}} ><MyHerder/></Header>
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Index Page.</div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            <MyFooter/>
-          </Footer>
-        </Layout>
-      </Layout>
-      
-     
-  
-      <style jsx global>{`
-        .logo {
-          height: 32px;
-          background: rgba(255, 255, 255, 0.2);
-          margin: 16px;
+class Index extends Component{
+    constructor(props,context){
+        super(props,context)
+        this.state = {
+            posts:[]
         }
-        aside{
-          height: -webkit-fill-available;
+    }
+
+    componentDidMount() {
+        const url = API_URL;
+        axios.get(url).then(response => response.data)
+        .then((data) => {
+          this.setState({ posts: data })
+          console.log(this.state.posts)
+         })
+      }
+
+    render() {
+        if(this.state.posts.length === 0){
+            return (<Layouts><div>null data</div></Layouts>)
         }
-      `}</style>
-  
-    </div>
-    )
-  }
+        return (
+            <div>
+                <Layouts>
+                    <div>
+                        <h1>React fetch data post</h1>
+                        <div>
+                            {
+                                this.state.posts.map((post) => (
+                                <div>
+                                    <p>{post.id} : {post.title}</p>
+                                    <p>{post.body}</p>
+                                </div>
+                            ))
+                            }
+                        </div>
+                    </div>
+                </Layouts>
+            </div>
+        )
+    }
 }
+
+export default Index

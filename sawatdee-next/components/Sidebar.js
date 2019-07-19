@@ -1,7 +1,7 @@
 import { Layout,Menu, Breadcrumb, Icon } from 'antd';
 import Link from 'next/link'
 import Avatar from 'react-avatar';
-
+import React,{Component} from "react";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -17,7 +17,7 @@ const image_ava = {
 }
 
 
-export default class MySidebar extends React.Component{
+export default class MySidebar extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -105,8 +105,8 @@ export default class MySidebar extends React.Component{
                         </SubMenu>
                         <Menu.Item key="9">
                             <Icon type="mail" />
-                            <Link href="/context">
-                            <span><a style={{color:'#fff'}}>Context Me</a> </span>
+                            <Link href="/contact">
+                            <span><a style={{color:'#fff'}}>Contact Me</a> </span>
                             </Link>
                         </Menu.Item>
                     </Menu>
