@@ -34,7 +34,7 @@ export default class Layouts extends Component {
         </Layout>
       </Layout>
 
-      <style jsx global>{`
+      {/* <style jsx global>{`
         .logo {
           height: 32px;
           background: rgba(255, 255, 255, 0.2);
@@ -45,7 +45,7 @@ export default class Layouts extends Component {
           height: -webkit-fill-available;
           max-height: 100%;
         }
-      `}</style>
+      `}</style> */}
       
       </div>
     )

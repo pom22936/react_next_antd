@@ -1,8 +1,9 @@
 import Layouts from '../components/Layouts'
 import { Carousel, Card, Row, Col, Rate } from 'antd'
+import React,{Component} from "react";
 
 
-export default class About extends React.Component{
+class About extends Component{
     render() {
         return (
             <div>
@@ -37,3 +38,5 @@ export default class About extends React.Component{
         )
     }
 }
+
+export default About

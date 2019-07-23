@@ -1,4 +1,5 @@
 import Layouts from '../components/Layouts'
+import React,{Component} from "react"
 import {
   Form,
   Input,
@@ -51,7 +52,7 @@ const residences = [
   },
 ];
 
-class Form_contact extends React.Component{
+class Form_contact extends Component{
   constructor(props){
     super(props)
 

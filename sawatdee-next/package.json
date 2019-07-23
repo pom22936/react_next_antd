@@ -28,6 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-avatar": "^3.6.0",
+    "react-content-loader": "^4.2.2",
     "react-dom": "^16.8.6",
     "react-web-vector-icons": "^1.0.2",
     "ts-loader": "^6.0.4"
