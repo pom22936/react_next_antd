@@ -1,10 +1,10 @@
 {
   "devFiles": [
-    "static/development/dll/dll_71e1164393c5b9164c66.js",
-    "static/development/dll/dll_71e1164393c5b9164c66.js.map"
+    "static/development/dll/dll_f429479b7538723cd830.js",
+    "static/development/dll/dll_f429479b7538723cd830.js.map"
   ],
   "pages": {
-    "/": [
+    "/Front_skill": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
@@ -16,11 +16,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/back_cert": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/index": [
+    "/about": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
